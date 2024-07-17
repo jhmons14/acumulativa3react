@@ -9,18 +9,22 @@ export function PostItComponent() {
     const importanciaRef = useRef()
 
     const [postList, setPostList] = useState([
-        {id:uuid(), title:'hola', description:'algo', important:false}
+        {id:uuid(), title:'hola', description:'algo', important:false},
+        {id:uuid(), title:'adios', description:'algo', important:true},
+        {id:uuid(), title:'baño', description:'limpiar', important:false},
+        {id:uuid(), title:'cocina', description:'hacer pollo', important:false}
     ])
     
     function agregarPostIt() {
         const titulo = tituloRef.current.value;
         const descripcion = descripcionRef.current.value;
-        const importancia = !importanciaRef.current.checked;
+        const importancia = importanciaRef.current.checked;
 
         
 
         if(titulo.trim()==='' || descripcion.trim()===''){
             alert('campos vacios')
+            return
         }
 
         const newPostIt = {
@@ -39,6 +43,7 @@ export function PostItComponent() {
         const postIts = postList.filter(post => post.id === id)
         console.log(postIts);
         setPostList(postIts)
+        //quiero eliminar el post it de la lista postList
     }
 
     return (
