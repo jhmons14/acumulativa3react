@@ -33,6 +33,10 @@ export function PostItComponent() {
             description:descripcion,
             important:importancia
         }
+        setTimeout(() => {
+            titulo = ''
+        }, 2000);
+
         const newPostList = [...postList, newPostIt]
         console.log(newPostList);
         setPostList(newPostList) //aca renderiza o actualiza cada vez que hace un cambio.
@@ -40,9 +44,9 @@ export function PostItComponent() {
 
     function eliminarPostIt(id) {
         console.log('hola');
-        const postIts = postList.filter(post => post.id === id)
+        const postIts = postList.filter(post => post.id !== id)
         console.log(postIts);
-        setPostList(postIts)
+        setPostList(postIts); //
         //quiero eliminar el post it de la lista postList
     }
 

@@ -1,0 +1,34 @@
+
+.contenedor{
+    display: inline-flex;
+    
+}
+.importante{
+    background-color: #EC7063;
+    width: 12rem;
+    height: 10rem;
+    padding: 5px;
+    margin: 7px;
+
+}
+.importante h3{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.noImportante{
+    background-color: #FFFFCC;
+    width: 12rem;
+    height: 10rem;
+    padding: 5px;
+    margin: 7px;
+    max-width: 12rem;
+}
+.contenedor .btn{
+    display: flex;
+    justify-content: end;
+}
+.btn{
+    display: flex;
+    text-align: end;
+    border: none;
+    background-color: transparent;
+}
