@@ -20,7 +20,7 @@ export function PostItSalida({postIt, eliminarPostIt}) {
         <div className={clases.contenedor}>
             <div className={clases.noImportante}>
                 <button className={clases.btn} onClick={eliminar}>X</button>
-                <h3 >{title}</h3>
+                <h3>{title}</h3>
                 <p>{description}</p>
             </div>
         </div>

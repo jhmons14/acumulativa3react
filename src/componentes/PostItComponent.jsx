@@ -8,6 +8,13 @@ export function PostItComponent() {
     const descripcionRef = useRef()
     const importanciaRef = useRef()
 
+    const estilos={
+        ropa: {
+            marginRight: '8px',
+            color:'white'
+        }
+    }
+
     const [postList, setPostList] = useState([
         {id:uuid(), title:'hola', description:'algo', important:false},
         {id:uuid(), title:'adios', description:'algo', important:true},
@@ -33,9 +40,9 @@ export function PostItComponent() {
             description:descripcion,
             important:importancia
         }
-        setTimeout(() => {
-            titulo = ''
-        }, 2000);
+        // setTimeout(() => {
+        //     titulo = ''
+        // }, 2000);
 
         const newPostList = [...postList, newPostIt]
         console.log(newPostList);
@@ -53,9 +60,9 @@ export function PostItComponent() {
     return (
         <div className="container">
             <h1>Post It Simulator!</h1>
-            <input ref={tituloRef} className="m-2" type="text" placeholder="Titulo"/>
-            <input ref={descripcionRef} className="m-2" type="text" placeholder="Descripcion"/>
-            <input ref={importanciaRef} type="checkbox" /><label htmlFor="">importante</label>
+            <input ref={tituloRef} className="m-2" type="text" placeholder="Titulo" maxLength={20}/>
+            <input ref={descripcionRef} className="m-2" type="text" placeholder="Descripcion" maxLength={60}/>
+            <input ref={importanciaRef} type="checkbox" style={estilos.ropa}/><label htmlFor="" style={estilos.ropa}>importante</label>
             <button className="btn btn-primary" onClick={agregarPostIt}>Agregar</button>
             {/* <button onClick={eliminarPostIt}>x</button> */}
             <div>
