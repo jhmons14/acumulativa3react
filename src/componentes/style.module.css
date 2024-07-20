@@ -1,17 +1,20 @@
 
 .contenedor{
-    display: inline-flex;
-    position: relative;
+    display: flex;
+    width: 15rem;
+    margin: 10px;
 }
 .importante{
     background-color: #EC7063;
-    width: 14rem;
-    height: 12rem;
+
+    min-width: 14rem;
+    min-height: 12rem;
     padding: 5px;
     margin: 7px;
     max-width: 14rem;
     max-height: 12rem;
     box-shadow: 2px 3px 8px 1px rgb(66, 62, 62);
+    position: relative;
 
 }
 .contenedor h3, p{
@@ -21,13 +24,14 @@
 }
 .noImportante{
     background-color: #FFFFCC;
-    width: 14rem;
-    height: 12rem;
+    min-width: 14rem;
+    min-height: 12rem;
     padding: 5px;
     margin: 7px;
-    /* max-width: 14rem;
-    max-height: 12rem; */
+    max-width: 14rem;
+    max-height: 12rem;
     box-shadow: 2px 3px 8px 1px rgb(66, 62, 62);
+    position: relative;
 }
 .contenedor .btn{
     position: absolute;
@@ -39,7 +43,3 @@
     border: none;
     background-color: transparent;
 }
-/* .contenedor p{
-    width: 12rem;
-    word-break: break-all;
-} */

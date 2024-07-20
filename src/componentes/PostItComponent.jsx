@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { PostItSalida } from "./PostItSalida";
 import { v4 as uuid } from 'uuid';
+import estilo from './estilos.module.css'
 
 export function PostItComponent() {
 
@@ -8,12 +9,7 @@ export function PostItComponent() {
     const descripcionRef = useRef()
     const importanciaRef = useRef()
 
-    const estilos={
-        ropa: {
-            marginRight: '8px',
-            color:'white'
-        }
-    }
+    
 
     const [postList, setPostList] = useState([
         {id:uuid(), title:'hola', description:'algo', important:false},
@@ -40,10 +36,7 @@ export function PostItComponent() {
             description:descripcion,
             important:importancia
         }
-        // setTimeout(() => {
-        //     titulo = ''
-        // }, 2000);
-
+        
         const newPostList = [...postList, newPostIt]
         console.log(newPostList);
         setPostList(newPostList) //aca renderiza o actualiza cada vez que hace un cambio.
@@ -58,14 +51,14 @@ export function PostItComponent() {
     }
 
     return (
-        <div className="container">
+        <div className={estilo.contenedorMayor}>
             <h1>Post It Simulator!</h1>
             <input ref={tituloRef} className="m-2" type="text" placeholder="Titulo" maxLength={20}/>
             <input ref={descripcionRef} className="m-2" type="text" placeholder="Descripcion" maxLength={60}/>
-            <input ref={importanciaRef} type="checkbox" style={estilos.ropa}/><label htmlFor="" style={estilos.ropa}>importante</label>
+            <input ref={importanciaRef} type="checkbox" className={estilo.decoration}/><label htmlFor="" className={estilo.decoration}>importante</label>
             <button className="btn btn-primary" onClick={agregarPostIt}>Agregar</button>
             {/* <button onClick={eliminarPostIt}>x</button> */}
-            <div>
+            <div className={estilo.content}>
                 {postList.map(postIt => <PostItSalida eliminarPostIt={eliminarPostIt} postIt={postIt} key={postIt.id} />)}
             </div>
         </div>

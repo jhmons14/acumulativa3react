@@ -1,0 +1,10 @@
+
+.decoration{
+    color: white;
+    margin: 10px;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 65rem;
+}
